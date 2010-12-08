@@ -12,6 +12,7 @@ SRC    = $(SRC_PT) $(SRC_EN)
 
 OUT_PT = alexei.pdf alexei.doc
 OUT_EN = alexei-english.pdf alexei-english.doc
+OUT    = $(OUT_PT) $(OUT_EN)
 
 DBOX_DIR = $(HOME)/Dropbox/Public/CV
 DBOX_OUT = $(DBOX_DIR)/alexei.odt \
@@ -39,8 +40,9 @@ $(OUT_EN): $(SRC_EN)
 
 git:
 	@if [ -n "`$(GIT) status -s`" ]; then \
-		$(GIT) add $(SRC) ; \
-		$(GIT) commit $(SRC) -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`"; \
+		$(GIT) add $(SRC) $(OUT) ; \
+		$(GIT) commit $(SRC) $(OUT) \
+            -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`"; \
 		$(GIT) push ; \
 	fi
 
