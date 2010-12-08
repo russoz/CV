@@ -3,7 +3,7 @@
 #
 
 UNOCONV = /usr/bin/unoconv --stdout -vf
-CP_P = /bin/cp -u
+CP = /bin/cp -u
 GIT = /usr/bin/git
 
 SRC_PT = alexei.odt
@@ -28,24 +28,25 @@ cv: cv_pt cv_en
 cv_pt: $(OUT_PT)
 
 $(OUT_PT): $(SRC_PT)
-	$(CP_P) $(SRC_PT) out/$(SRC_PT)
+	$(CP) $(SRC_PT) out/$(SRC_PT)
 	$(UNOCONV) doc $(SRC_PT) >out/`basename $(SRC_PT) .odt`.doc
 	$(UNOCONV) pdf $(SRC_PT) >out/`basename $(SRC_PT) .odt`.pdf
 
 cv_en: $(OUT_EN)
 
 $(OUT_EN): $(SRC_EN)
-	$(CP_P) $(SRC_EN) out/$(SRC_EN)
+	$(CP) $(SRC_EN) out/$(SRC_EN)
 	$(UNOCONV) doc $(SRC_EN) >out/`basename $(SRC_EN) .odt`.doc
 	$(UNOCONV) pdf $(SRC_EN) >out/`basename $(SRC_EN) .odt`.pdf
 
 git:
 	$(GIT) add .
 	$(GIT) commit . -o -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`" || exit 0
+	$(GIT) push
 
 dropbox: $(DBOX_OUT)
 
 $(DBOX_OUT): $(SRC_PT) $(OUT_PT) $(SRC_EN) $(OUT_EN)
-	$(CP_P) $(SRC_PT) $(OUT_PT) $(SRC_EN) $(OUT_EN) $(DBOX_DIR)
+	$(CP) $(SRC_PT) $(OUT_PT) $(SRC_EN) $(OUT_EN) $(DBOX_DIR)
 
 
