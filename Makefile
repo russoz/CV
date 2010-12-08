@@ -40,6 +40,8 @@ $(OUT_EN): $(SRC_EN)
 	$(UNOCONV) pdf $(SRC_EN) >out/`basename $(SRC_EN) .odt`.pdf
 
 git:
+	$(GIT) status -s :w
+
 	$(GIT) add .
 	$(GIT) commit . -o -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`" || exit 0
 	$(GIT) push
