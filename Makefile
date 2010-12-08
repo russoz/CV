@@ -40,7 +40,7 @@ $(OUT_EN): $(SRC_EN)
 	$(UNOCONV) pdf $(SRC_EN) >out/`basename $(SRC_EN) .odt`.pdf
 
 git:
-	- if [ -n "`$(GIT) status -s`" ]; then \
+	@if [ -n "`$(GIT) status -s`" ]; then \
 		$(GIT) add . ; \
 		$(GIT) commit -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`"; \
 		$(GIT) push ; \
