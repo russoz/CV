@@ -21,7 +21,7 @@ DBOX_OUT = $(DBOX_DIR)/alexei.odt \
 	$(DBOX_DIR)/alexei-english.pdf \
 	$(DBOX_DIR)/alexei-english.doc
 
-all: cv dropbox
+all: cv git dropbox
 
 cv: cv_pt cv_en
 
