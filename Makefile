@@ -40,10 +40,9 @@ $(OUT_EN): $(SRC_EN)
 	$(UNOCONV) pdf $(SRC_EN) >out/`basename $(SRC_EN) .odt`.pdf
 
 git:
-	[ -n "`$(GIT) status -s`" ] && \
-		$(GIT) add . ; \
+	[ -n "`$(GIT) status -s`" ] && ( $(GIT) add . ; \
 		$(GIT) commit -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`"; \
-		$(GIT) push
+		$(GIT) push )
 
 dropbox: $(DBOX_OUT)
 
