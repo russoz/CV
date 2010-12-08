@@ -41,7 +41,7 @@ $(OUT_EN): $(SRC_EN)
 
 git:
 	$(GIT) add .
-	$(GIT) commit . -o -m "Semi-automated commit at `date +%Y.%m.%d-%H.%M`"
+	$(GIT) commit . -o -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`" || exit 0
 
 dropbox: $(DBOX_OUT)
 
