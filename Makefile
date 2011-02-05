@@ -4,6 +4,7 @@
 
 UNOCONV = /usr/bin/unoconv -vf
 CP = /bin/cp
+TOUCH = /usr/bin/touch
 GIT = /usr/bin/git
 
 SRC_PT = alexei.odt
@@ -53,4 +54,7 @@ dropbox: $(DBOX_OUT)
 $(DBOX_OUT): $(OUT_PT) $(OUT_EN)
 	$(CP) $(SRC_PT) $(OUT_PT) $(SRC_EN) $(OUT_EN) $(DBOX_DIR)
 
-
+force:
+	$(TOUCH) $(SRC)
+	$(MAKE)
+    
