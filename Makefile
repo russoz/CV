@@ -43,10 +43,11 @@ $(OUT_EN): $(SRC_EN)
 
 git:
 	@if [ -n "`$(GIT) status -s`" ]; then \
-		$(GIT) add $(SRC) $(OUT) ; \
+		$(GIT) pull \
+		$(GIT) add $(SRC) $(OUT) \
 		$(GIT) commit $(SRC) $(OUT) \
-            -m "CV: Semi-automated commit at `date +%Y.%m.%d-%H.%M`"; \
-		$(GIT) push ; \
+			-m "Semi-automatic commit at `date +%Y.%m.%d-%H.%M`" \
+		$(GIT) push \
 	fi
 
 dropbox: $(DBOX_OUT)
