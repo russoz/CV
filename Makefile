@@ -23,7 +23,7 @@ DBOX_OUT = $(DBOX_DIR)/alexei.odt \
 	$(DBOX_DIR)/alexei-english.pdf \
 	$(DBOX_DIR)/alexei-english.doc
 
-all: cv git dropbox
+all: cv git
 
 cv: cv_pt cv_en
 
@@ -43,11 +43,11 @@ $(OUT_EN): $(SRC_EN)
 
 git:
 	@if [ -n "`$(GIT) status -s`" ]; then \
-		$(GIT) pull \
-		$(GIT) add $(SRC) $(OUT) \
-		$(GIT) commit $(SRC) $(OUT) \
-			-m "Semi-automatic commit at `date +%Y.%m.%d-%H.%M`" \
-		$(GIT) push \
+        $(GIT) pull; \
+        $(GIT) add $(SRC) $(OUT); \
+        $(GIT) commit $(SRC) $(OUT) \
+			-m "Semi-automatic commit at `date +%Y.%m.%d-%H.%M`"; \
+		$(GIT) push; \
 	fi
 
 dropbox: $(DBOX_OUT)
