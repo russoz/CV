@@ -39,7 +39,7 @@ cv_en: $(OUT_EN)
 $(OUT_EN): $(SRC_EN)
 	$(UNOCONV) doc  $(SRC_EN)
 	$(UNOCONV) pdf  $(SRC_EN)
-	$(UNOCONV) html $(SRC_PT)
+	$(UNOCONV) html $(SRC_EN)
 
 git:
 	@if [ -n "`$(GIT) status -s`" ]; then \
