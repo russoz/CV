@@ -46,7 +46,7 @@ git:
         $(GIT) pull; \
         $(GIT) add $(SRC) $(OUT); \
         $(GIT) commit $(SRC) $(OUT) \
-			-m "Semi-automatic commit at `date +%Y.%m.%d-%H.%M`"; \
+			-m "Semi-automatic commit at `date +%Y.%m.%d-%H.%M.%S`"; \
 		$(GIT) push; \
 	fi
 
