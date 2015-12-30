@@ -5,7 +5,7 @@
 UNOCONV = /usr/bin/unoconv -vf
 CP = /bin/cp
 TOUCH = /usr/bin/touch
-GIT = /usr/bin/git
+GIT = GIT_SSH='./my_ssh' /usr/bin/git
 
 SRC_PT = alexei.odt
 SRC_EN = alexei-english.odt
