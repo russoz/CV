@@ -8,11 +8,11 @@ TOUCH = /usr/bin/touch
 GIT = GIT_SSH='./my_ssh' /usr/bin/git
 
 SRC_PT = alexei.odt
-SRC_EN = alexei-english.odt
+SRC_EN = alexei-english.odt letter-booking.odt
 SRC    = $(SRC_PT) $(SRC_EN)
 
 OUT_PT = alexei.pdf alexei.doc alexei.html
-OUT_EN = alexei-english.pdf alexei-english.doc alexei-english.html
+OUT_EN = alexei-english.pdf alexei-english.doc alexei-english.html letter-booking.pdf
 OUT    = $(OUT_PT) $(OUT_EN)
 
 DBOX_DIR = $(HOME)/Dropbox/Public/CV
