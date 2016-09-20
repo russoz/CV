@@ -5,14 +5,14 @@
 UNOCONV = /usr/bin/unoconv -vf
 CP = /bin/cp
 TOUCH = /usr/bin/touch
-GIT = GIT_SSH='./my_ssh' /usr/bin/git
+GIT = /usr/bin/git
 
 SRC_PT = alexei.odt
-SRC_EN = alexei-english.odt letter-booking.odt
+SRC_EN = alexei-english.odt
 SRC    = $(SRC_PT) $(SRC_EN)
 
 OUT_PT = alexei.pdf alexei.doc
-OUT_EN = alexei-english.pdf alexei-english.doc letter-booking.pdf
+OUT_EN = alexei-english.pdf alexei-english.doc
 OUT    = $(OUT_PT) $(OUT_EN)
 
 DBOX_DIR = $(HOME)/Dropbox/Public/CV
