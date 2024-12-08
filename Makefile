@@ -1,6 +1,8 @@
 #
 #  Makefile
 #
+#  code: lang=makefile tabsize=4
+#
 
 UNOCONV = /usr/bin/unoconv -vf
 CP = /bin/cp
@@ -56,4 +58,3 @@ $(DBOX_OUT): $(OUT_PT) $(OUT_EN)
 force:
 	$(TOUCH) $(SRC)
 	$(MAKE)
-    
